@@ -1,0 +1,29 @@
+# Project: ficheros_acciones
+# Makefile created by Dev-C++ 5.4.1
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = fichero_accion.o
+LINKOBJ  = fichero_accion.o
+LIBS     = -L"C:/Users/edgar/Desktop/Aeros 15-16/devc++/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Users/edgar/Desktop/Aeros 15-16/devc++/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Users/edgar/Desktop/Aeros 15-16/devc++/MinGW64/x86_64-w64-mingw32/include"
+BIN      = ficheros_acciones.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+fichero_accion.o: fichero_accion.cpp
+	$(CPP) -c fichero_accion.cpp -o fichero_accion.o $(CXXFLAGS)
